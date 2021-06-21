@@ -1,0 +1,9 @@
+{
+    "categories": {
+        "0": "media"
+    },
+    "description": "Take pictures from your webcam or streams",
+    "image": "//s3.amazonaws.com/appforest_uf/f1624314402305x608441670576503000/camera.png",
+    "license": "open_source",
+    "name": "Camera-Free"
+}

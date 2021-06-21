@@ -1,0 +1,46 @@
+{
+    "add_hover_pressed": true,
+    "add_is_visible": true,
+    "add_large_file_upload_properties": true,
+    "autobinding_value": "image",
+    "category": "input forms",
+    "default_dim": {
+        "height": 200,
+        "width": 400
+    },
+    "display": "Camara",
+    "events": {
+    },
+    "fields": {
+        "AAG": {
+            "caption": "Stream Source",
+            "doc": "URL for stream source",
+            "editor": "StaticText",
+            "long_text": true,
+            "name": "source",
+            "rank": 0
+        }
+    },
+    "has_reset_fn": true,
+    "icon": "ion-android-checkbox-blank",
+    "property_applications": {
+        "Background": false,
+        "Border": true,
+        "BoxShadow": true,
+        "MinWidth": true,
+        "Padding": true,
+        "resizable": true
+    },
+    "states": {
+        "AAR": {
+            "caption": "foto",
+            "doc": "",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n}"
+            },
+            "name": "pic",
+            "value": "image"
+        }
+    },
+    "support_autobinding": false
+}
