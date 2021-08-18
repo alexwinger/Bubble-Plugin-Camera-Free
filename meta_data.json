@@ -2,8 +2,10 @@
     "categories": {
         "0": "media"
     },
-    "description": "Take pictures from your webcam or streams",
+    "demo_page": "",
+    "description": "Take pictures from your webcam or streams\n(It is still in alpha stages)\nDon't use it for now",
     "image": "//s3.amazonaws.com/appforest_uf/f1624314402305x608441670576503000/camera.png",
     "license": "open_source",
+    "link": "",
     "name": "Camera-Free"
 }
