@@ -8,7 +8,7 @@
         "height": 200,
         "width": 400
     },
-    "display": "Camara",
+    "display": "Camera",
     "fields": {
         "AAG": {
             "caption": "Stream Source",
@@ -33,7 +33,7 @@
     },
     "states": {
         "AAR": {
-            "caption": "foto",
+            "caption": "Picture",
             "doc": "",
             "initialization_code": {
                 "fn": "function(properties, context) {\n    return null;\n}"
