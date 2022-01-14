@@ -13,12 +13,21 @@
         "AAG": {
             "caption": "Stream Source",
             "default_val": "0",
-            "doc": "URL for stream source",
+            "doc": "A Number mean the camera index from the webcam device list, An URL means to get the video stream from a network videostream",
             "editor": "StaticText",
             "long_text": true,
             "name": "source",
             "optional": true,
             "rank": 0
+        },
+        "AAa": {
+            "caption": "Auto Start",
+            "default_val": true,
+            "doc": "Autostart video stream",
+            "editor": "Checkbox",
+            "in_style": false,
+            "name": "autostart",
+            "rank": 1
         }
     },
     "has_reset_fn": true,
@@ -40,6 +49,15 @@
             },
             "name": "pic",
             "value": "image"
+        },
+        "AAZ": {
+            "caption": "Camera is open",
+            "doc": "Indicates the state of the video stream, if is open or not",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\treturn false;\n}"
+            },
+            "name": "open_camera",
+            "value": "boolean"
         }
     },
     "support_autobinding": false

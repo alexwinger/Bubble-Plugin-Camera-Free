@@ -1,14 +1,10 @@
-function(instance, context) {
-        const constraints = {
-            kind: "videoinput",
-		  };
+function(instance, context){
     var height = instance.canvas.height();
     var width = instance.canvas.width();
     var dimensions = "width='"+width+"' height='"+height+"' ";
 	instance.canvas.append("<video "+dimensions+"></video>");
-    
-    if(!instance.data.cameras)
-    	instance.data.cameras = null;
-    
-    props=context.currentUser.listProperties();
+
+    instance.data.cameraRemoteUrl = "";
+    instance.data.cameraLocalNumber  = -1;
+    instance.data.cameraLocalStream = null;
 }

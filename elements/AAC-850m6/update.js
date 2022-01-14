@@ -1,41 +1,63 @@
 function(instance, properties, context) {
-    
+
     if(properties.source){
         cameraNumber = parseInt(properties.source)
         if(Number.isNaN(cameraNumber))
         {
-        	player.srcObject = properties.source;
+            instance.data.cameraRemoteUrl = properties.source;
+            if(properties.autostart == true){
+                var player = instance.canvas.find("video")[0];
+                player.srcObject = instance.data.cameraRemoteUrl;
+                player.play();
+                instance.publishState("open_camera", true);
+            }
         }
         else
         {
-            instance.data.cameraNumber = cameraNumber
-			navigator.mediaDevices.enumerateDevices().then(
-				function(devices) {
-					if(!instance.data.cameras){
-						instance.data.cameras = []
-						devices.forEach(
-							function(device){
-								if(device.kind == "videoinput"){
-									instance.data.cameras.push(device)
-								}
-							});
-						
-						var player = instance.canvas.find("video")[0];
-						player.srcObject = null;
-                        cameraNumber = instance.data.cameraNumber;
-                        if(instance.data.cameras.length>cameraNumber && cameraNumber >=0 ){
-                            var constraint ={video:{deviceId:{exact:instance.data.cameras[cameraNumber].deviceId}}};
-                            var userMedia = navigator.mediaDevices.getUserMedia(constraint);
-                            userMedia.then((stream) => {player.srcObject = stream;});
-                        }
-					}
-				}).catch(function(err) {
-					console.log(err.name + ": " + err.message);
-				});
+            instance.data.cameraLocalNumber = cameraNumber;
         }
     }else{
-    	var mediaDevices = navigator.mediaDevices;
-    	var userMedia = mediaDevices.getUserMedia(constraints);
-    	userMedia.then((stream) => {player.srcObject = stream;});
+        instance.data.cameraLocalNumber=0;
+    }
+
+    if(instance.data.cameraLocalNumber >= 0 && properties.autostart == true)
+    {
+        if(!instance.data.cameraLocalStream)
+        {
+            devices = navigator.mediaDevices.enumerateDevices().then(
+                function(devices)
+                {
+                    videoDevices = []
+                    devices.forEach
+                    (
+                        function(device)
+                        {
+                            if(device.kind == "videoinput")
+                            {
+                                videoDevices.push(device);
+                            }
+                        }
+                    );
+
+                    if(videoDevices.length > instance.data.cameraLocalNumber && instance.data.cameraLocalNumber >=0 )
+                    {
+                        var constraint ={video:{deviceId:{exact:videoDevices[instance.data.cameraLocalNumber].deviceId}}};
+                        navigator.mediaDevices.getUserMedia(constraint).then
+                        (
+                            function(stream)
+                            {
+                                if(stream != null)
+                                {
+                                    var player = instance.canvas.find("video")[0];
+                                    player.srcObject = stream;
+                                    instance.data.cameraLocalStream = stream;
+                                    player.play();
+                                    instance.publishState("open_camera", true);
+                                }
+                            }
+                        );
+                    }
+                }).catch( function(err) { });
+        }
     }
 }
