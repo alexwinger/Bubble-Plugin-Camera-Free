@@ -12,7 +12,7 @@
     "fields": {
         "AAG": {
             "caption": "Stream Source",
-            "default_val": "",
+            "default_val": "0",
             "doc": "URL for stream source",
             "editor": "StaticText",
             "long_text": true,
