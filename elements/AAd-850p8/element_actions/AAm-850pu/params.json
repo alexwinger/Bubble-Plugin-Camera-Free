@@ -1,0 +1,13 @@
+{
+    "caption": "setLineWidth",
+    "fields": {
+        "AAn": {
+            "caption": "width",
+            "default_val": 5,
+            "editor": "DynamicValue",
+            "name": "width",
+            "rank": 0,
+            "value": "number"
+        }
+    }
+}

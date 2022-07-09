@@ -42,6 +42,8 @@ function(instance, properties, context) {
                     if(videoDevices.length > instance.data.cameraLocalNumber && instance.data.cameraLocalNumber >=0 )
                     {
                         var constraint ={video:{deviceId:{exact:videoDevices[instance.data.cameraLocalNumber].deviceId}}};
+                        if(constraint.video.deviceId.exact == '')
+                            constraint ={video:{groupId:{exact:videoDevices[instance.data.cameraLocalNumber].groupId}}};
                         navigator.mediaDevices.getUserMedia(constraint).then
                         (
                             function(stream)

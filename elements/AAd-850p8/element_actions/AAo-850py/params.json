@@ -1,0 +1,12 @@
+{
+    "caption": "setLineColor",
+    "fields": {
+        "AAp": {
+            "caption": "color",
+            "default_val": "rgba(0, 0, 0, 1)",
+            "editor": "Color",
+            "name": "color",
+            "rank": 0
+        }
+    }
+}

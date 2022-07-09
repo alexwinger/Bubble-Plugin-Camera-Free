@@ -1,11 +1,12 @@
 {
     "categories": {
-        "0": "media"
+        "0": "media",
+        "1": "video"
     },
     "demo_page": "https://webcam-input.bubbleapps.io/version-test",
     "description": "Take pictures from your webcam or streams\n(It is still in alpha stages)\nDon't use it for now",
     "image": "//s3.amazonaws.com/appforest_uf/f1624314402305x608441670576503000/camera.png",
     "license": "open_source",
-    "name": "Webcam Input",
+    "name": "Camera-Free",
     "plugin_instructions": "1.- Add the plugin in your project\n2.- Configure the source property with an integer (0 is the first webcam)\n3.- Add a button that fires the TakePic event\n4.- Add an Image element and bind it to Camera's picture"
 }

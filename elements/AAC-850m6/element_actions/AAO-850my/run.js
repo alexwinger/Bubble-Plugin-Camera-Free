@@ -6,14 +6,13 @@ function(instance, properties, context) {
 	imageCanvas.height = player.height;
 	var drawContext = imageCanvas.getContext('2d');
     
-
     
   //Do the operation
 	drawContext.drawImage(player, 0, 0, imageCanvas.width, imageCanvas.height);
     
     var imageData = imageCanvas.toDataURL("image/png").split(';base64,')[1];
     
-        var contentUploaded = (err,url) => {
+    var contentUploaded = (err,url) => {
         instance.publishState("pic",url);
     };
     

@@ -1,0 +1,68 @@
+{
+    "add_hover_pressed": true,
+    "add_is_visible": true,
+    "category": "visual elements",
+    "default_dim": {
+        "height": 200,
+        "width": 400
+    },
+    "display": "FotoRayable",
+    "fields": {
+        "AAe": {
+            "caption": "isDrawable",
+            "default_val": false,
+            "doc": "It is on when you can draw on the image",
+            "editor": "DynamicValue",
+            "name": "isdrawable",
+            "optional": true,
+            "rank": 0,
+            "value": "boolean"
+        },
+        "AAf": {
+            "caption": "linewidth",
+            "default_val": 5,
+            "doc": "Draw line's width",
+            "editor": "DynamicValue",
+            "name": "linewidth",
+            "optional": true,
+            "rank": 1,
+            "value": "number"
+        },
+        "AAg": {
+            "caption": "color",
+            "default_val": "rgba(255, 68, 68, 1)",
+            "doc": "Draw line's color",
+            "editor": "Color",
+            "in_style": true,
+            "name": "linecolor",
+            "optional": true,
+            "rank": 2
+        },
+        "AAs": {
+            "caption": "bgImage",
+            "default_val": "//s3.amazonaws.com/appforest_uf/f1657331790960x974480213239077300/20170708_204515.jpg",
+            "editor": "DynamicValue",
+            "name": "bgimage",
+            "optional": true,
+            "rank": 3,
+            "value": "image"
+        }
+    },
+    "icon": "ion-android-checkbox-blank",
+    "property_applications": {
+        "Border": true,
+        "BoxShadow": true,
+        "resizable": true
+    },
+    "states": {
+        "AAh": {
+            "caption": "picture",
+            "doc": "This is the picture that is beign shown",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\treturn null;\n}"
+            },
+            "name": "pic",
+            "value": "image"
+        }
+    }
+}

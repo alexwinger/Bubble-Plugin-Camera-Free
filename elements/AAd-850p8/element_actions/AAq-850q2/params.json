@@ -1,0 +1,12 @@
+{
+    "caption": "setDrawable",
+    "fields": {
+        "AAr": {
+            "caption": "isDrawable",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "isdrawable",
+            "rank": 0
+        }
+    }
+}

@@ -28,6 +28,15 @@
             "in_style": false,
             "name": "autostart",
             "rank": 1
+        },
+        "AAc": {
+            "caption": "Draw Over Picture",
+            "default_val": false,
+            "doc": "You can draw over the image if this field is set to True",
+            "editor": "Checkbox",
+            "in_style": false,
+            "name": "drawover",
+            "rank": 2
         }
     },
     "has_reset_fn": true,
