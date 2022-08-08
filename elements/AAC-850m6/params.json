@@ -29,14 +29,35 @@
             "name": "autostart",
             "rank": 1
         },
-        "AAc": {
-            "caption": "Draw Over Picture",
+        "ABA": {
+            "caption": "isdrawable",
             "default_val": false,
-            "doc": "You can draw over the image if this field is set to True",
-            "editor": "Checkbox",
-            "in_style": false,
-            "name": "drawover",
-            "rank": 2
+            "doc": "You can draw over the picture when this is on",
+            "editor": "DynamicValue",
+            "name": "isdrawable",
+            "optional": true,
+            "rank": 2,
+            "value": "boolean"
+        },
+        "ABB": {
+            "caption": "linewidth",
+            "default_val": 5,
+            "doc": "Draw line's width",
+            "editor": "DynamicValue",
+            "name": "linewidth",
+            "optional": true,
+            "rank": 3,
+            "value": "number"
+        },
+        "ABC": {
+            "caption": "linecolor",
+            "default_val": "rgba(255, 0, 0, 1)",
+            "doc": "Draw line's color",
+            "editor": "Color",
+            "in_style": true,
+            "name": "linecolor",
+            "optional": true,
+            "rank": 4
         }
     },
     "has_reset_fn": true,
@@ -66,6 +87,15 @@
                 "fn": "function(properties, context) {\n\treturn false;\n}"
             },
             "name": "open_camera",
+            "value": "boolean"
+        },
+        "ABH": {
+            "caption": "Can Draw on image",
+            "doc": "Indicates that drawing over the image is enabled",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\treturn false;\n\n\n}"
+            },
+            "name": "drawing_enabled",
             "value": "boolean"
         }
     },

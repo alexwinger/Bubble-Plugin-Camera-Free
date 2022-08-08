@@ -1,65 +1,27 @@
 function(instance, properties, context) {
-
-    if(properties.source){
-        cameraNumber = parseInt(properties.source)
-        if(Number.isNaN(cameraNumber))
-        {
-            instance.data.cameraRemoteUrl = properties.source;
-            if(properties.autostart == true){
-                var player = instance.canvas.find("video")[0];
-                player.srcObject = instance.data.cameraRemoteUrl;
-                player.play();
-                instance.publishState("open_camera", true);
-            }
-        }
-        else
-        {
-            instance.data.cameraLocalNumber = cameraNumber;
-        }
-    }else{
-        instance.data.cameraLocalNumber=0;
+    //Load any data 
+    var camSrc = instance.data.camSrc;
+    var StartCamera = instance.data.StartCamera;
+    
+    instance.data.linewidth  = properties.linewidth;
+    instance.data.linecolor  = properties.linecolor;
+    instance.data.autostart  = properties.autostart;
+    
+    height = properties.bubble.height();
+    width  = properties.bubble.width();
+    
+    //Do the operation
+    
+    if(height != instance.data.drawCanvas.height || width != instance.data.drawCanvas.width){
+        instance.data.drawCanvas.height = properties.bubble.height();
+    	instance.data.drawCanvas.width  = properties.bubble.width();
     }
-
-    if(instance.data.cameraLocalNumber >= 0 && properties.autostart == true)
-    {
-        if(!instance.data.cameraLocalStream)
-        {
-            devices = navigator.mediaDevices.enumerateDevices().then(
-                function(devices)
-                {
-                    videoDevices = []
-                    devices.forEach
-                    (
-                        function(device)
-                        {
-                            if(device.kind == "videoinput")
-                            {
-                                videoDevices.push(device);
-                            }
-                        }
-                    );
-
-                    if(videoDevices.length > instance.data.cameraLocalNumber && instance.data.cameraLocalNumber >=0 )
-                    {
-                        var constraint ={video:{deviceId:{exact:videoDevices[instance.data.cameraLocalNumber].deviceId}}};
-                        if(constraint.video.deviceId.exact == '')
-                            constraint ={video:{groupId:{exact:videoDevices[instance.data.cameraLocalNumber].groupId}}};
-                        navigator.mediaDevices.getUserMedia(constraint).then
-                        (
-                            function(stream)
-                            {
-                                if(stream != null)
-                                {
-                                    var player = instance.canvas.find("video")[0];
-                                    player.srcObject = stream;
-                                    instance.data.cameraLocalStream = stream;
-                                    player.play();
-                                    instance.publishState("open_camera", true);
-                                }
-                            }
-                        );
-                    }
-                }).catch( function(err) { });
+    
+    if(properties.source != camSrc){
+        instance.data.camSrc = properties.source;
+        
+        if(properties.autostart){
+            StartCamera(true);
         }
     }
 }

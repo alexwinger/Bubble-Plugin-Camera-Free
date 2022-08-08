@@ -1,11 +1,11 @@
 {
     "caption": "setLineWidth",
+    "doc": "",
     "fields": {
-        "AAn": {
-            "caption": "width",
-            "default_val": 5,
+        "ABG": {
+            "caption": "linewidth",
             "editor": "DynamicValue",
-            "name": "width",
+            "name": "linewidth",
             "rank": 0,
             "value": "number"
         }

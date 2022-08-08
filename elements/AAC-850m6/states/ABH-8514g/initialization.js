@@ -1,3 +1,5 @@
 function(properties, context) {
-	return null;
+	return false;
+
+
 }

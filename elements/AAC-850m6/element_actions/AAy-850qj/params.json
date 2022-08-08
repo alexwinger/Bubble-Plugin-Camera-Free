@@ -1,0 +1,13 @@
+{
+    "caption": "setDrawable",
+    "fields": {
+        "ABD": {
+            "caption": "isdrawable",
+            "default_val": false,
+            "editor": "DynamicValue",
+            "name": "isdrawable",
+            "rank": 0,
+            "value": "boolean"
+        }
+    }
+}

@@ -1,9 +1,10 @@
 {
     "caption": "setLineColor",
+    "doc": "Set line color",
     "fields": {
-        "AAp": {
+        "ABF": {
             "caption": "color",
-            "default_val": "rgba(0, 0, 0, 1)",
+            "default_val": "rgba(255, 0, 0, 1)",
             "editor": "Color",
             "name": "color",
             "rank": 0
