@@ -3,7 +3,7 @@
     "add_is_visible": true,
     "add_large_file_upload_properties": true,
     "autobinding_value": "image",
-    "category": "input forms",
+    "category": "visual elements",
     "default_dim": {
         "height": 200,
         "width": 400
@@ -61,7 +61,7 @@
         }
     },
     "has_reset_fn": true,
-    "icon": "ion-android-checkbox-blank",
+    "icon": "ion-ios-camera",
     "property_applications": {
         "Background": false,
         "Border": true,
