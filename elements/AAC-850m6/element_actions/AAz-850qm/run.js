@@ -2,5 +2,6 @@ function(instance, properties, context) {
   //Load any data 
 
   //Do the operation
-    instance.data.ImageUpdate();
+	if(!instance.data.iscameraopen)
+		instance.data.ImageUpdate();
 }

@@ -1,3 +1,5 @@
 function(instance, properties, context) {
-    instance.data.StartCamera();
+    if(instance.data.camSrc != ""){
+        instance.data.StartCamera();
+    }
 }

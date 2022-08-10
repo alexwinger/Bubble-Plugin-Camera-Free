@@ -1,7 +1,5 @@
 function(instance, properties, context) {
     //Load any data 
-    var camSrc = instance.data.camSrc;
-    var StartCamera = instance.data.StartCamera;
     
     instance.data.linewidth  = properties.linewidth;
     instance.data.linecolor  = properties.linecolor;
@@ -12,16 +10,17 @@ function(instance, properties, context) {
     
     //Do the operation
     
-    if(height != instance.data.drawCanvas.height || width != instance.data.drawCanvas.width){
-        instance.data.drawCanvas.height = properties.bubble.height();
-    	instance.data.drawCanvas.width  = properties.bubble.width();
+    if(properties.source && (instance.data.camSrc != properties.source) ){
+        instance.data.camSrc = properties.source;
     }
     
-    if(properties.source != camSrc){
-        instance.data.camSrc = properties.source;
+    if(height != instance.data.drawCanvas.height || width != instance.data.drawCanvas.width){
+        if(height > 0)
+        	instance.data.drawCanvas.height = height;
         
-        if(properties.autostart){
-            StartCamera(true);
-        }
+        if(width > 0)
+    		instance.data.drawCanvas.width  = width;
     }
+    
+
 }

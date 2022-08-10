@@ -20,15 +20,6 @@
             "optional": true,
             "rank": 0
         },
-        "AAa": {
-            "caption": "Auto Start",
-            "default_val": true,
-            "doc": "Autostart video stream",
-            "editor": "Checkbox",
-            "in_style": false,
-            "name": "autostart",
-            "rank": 1
-        },
         "ABA": {
             "caption": "isdrawable",
             "default_val": false,
@@ -36,7 +27,7 @@
             "editor": "DynamicValue",
             "name": "isdrawable",
             "optional": true,
-            "rank": 2,
+            "rank": 1,
             "value": "boolean"
         },
         "ABB": {
@@ -46,7 +37,7 @@
             "editor": "DynamicValue",
             "name": "linewidth",
             "optional": true,
-            "rank": 3,
+            "rank": 2,
             "value": "number"
         },
         "ABC": {
@@ -57,7 +48,7 @@
             "in_style": true,
             "name": "linecolor",
             "optional": true,
-            "rank": 4
+            "rank": 3
         }
     },
     "has_reset_fn": true,
@@ -81,7 +72,7 @@
             "value": "image"
         },
         "AAZ": {
-            "caption": "Camera is open",
+            "caption": "Camera open",
             "doc": "Indicates the state of the video stream, if is open or not",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\treturn false;\n}"
@@ -90,7 +81,7 @@
             "value": "boolean"
         },
         "ABH": {
-            "caption": "Can Draw on image",
+            "caption": "Drawing Enabled",
             "doc": "Indicates that drawing over the image is enabled",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\treturn false;\n\n\n}"

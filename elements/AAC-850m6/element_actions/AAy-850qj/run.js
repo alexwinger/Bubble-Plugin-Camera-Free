@@ -10,10 +10,9 @@ function(instance, properties, context) {
 
         if(!instance.data.iscameraopen && instance.data.isdrawable){
             instance.publishState("drawing_enabled", true);
-        }
-
-        if(!instance.data.isdrawable)
+        }else{
             instance.publishState("drawing_enabled", false);
+        }
     }
 
 }
